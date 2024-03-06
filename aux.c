@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   aux.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 14:22:32 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/06 14:24:04 by rivasque         ###   ########.fr       */
+/*   Created: 2024/03/06 11:28:29 by rivasque          #+#    #+#             */
+/*   Updated: 2024/03/06 11:41:30 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(int argc, char **argv)
+int	array_size(char **argv)
 {
-	(void)argc;
-	t_cmd 	*cmd;
+	int	i;
+
+	i = 0;
+	while (argv[i])
+		i++;
+	return (i);
 	
-	cmd = init_cmd();
-	cmd->args = argv;
-	ft_echo(cmd);
-	ft_pwc(cmd);
 }

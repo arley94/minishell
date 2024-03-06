@@ -6,13 +6,13 @@
 /*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:21:28 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/05 15:49:13 by rivasque         ###   ########.fr       */
+/*   Updated: 2024/03/06 11:41:45 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static char	**find_path(char **env)
+/*static char	**find_path(char **env)
 {
 	int		i;
 	char	**paths;
@@ -32,14 +32,6 @@ static char	**find_path(char **env)
 	if (!paths)
 		return (NULL);
 	return (paths);
-}
-
-char	**cmds(char *argv)
-{
-	char	**array_cmds;
-
-	array_cmds = ft_split(argv, ' ');
-	return (array_cmds);
 }
 
 char	*paths(char **env, char *cmd)
@@ -67,37 +59,4 @@ char	*paths(char **env, char *cmd)
 	ft_putstr_fd(cmd, 2);
 	ft_putendl_fd(": command not found", 2);
 	return (NULL);
-}
-
-int	is_token(t_cmd **argv)
-{
-	int	i;
-	
-	i = 0;
-	while (argv[i])
-	{
-		if (argv[i] == '<' || argv[i] == '>'|| 
-		argv[i] == '<<' || argv[i] == '>>' || argv[i] == '|')
-			return (1);
-		else 
-			return (0);
-		i++;
-	}
-}
-
-int	is_builtin(t_cmd **argv)
-{
-	int	i;
-
-	i = 0;
-	while (argv[i])
-	{
-		if (ft_strcmp(argv[i], "echo") == 0 || ft_strcmp(argv[i], "cd") == 0 ||
-		ft_strcmp(argv[i], "pwc") == 0 || ft_strcmp(argv[i], "export") == 0 ||
-		ft_strcmp(argv[i], "unset") == 0 || ft_strcmp(argv[i], "env") == 0 ||
-		ft_strcmp(argv[i], "exit") == 0)
-			return (1);
-		i++;	
-	}
-	return (0);
-}
+}*/

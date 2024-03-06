@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   aux_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 14:22:32 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/06 14:24:04 by rivasque         ###   ########.fr       */
+/*   Created: 2024/03/06 12:30:04 by rivasque          #+#    #+#             */
+/*   Updated: 2024/03/06 12:49:27 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(int argc, char **argv)
+t_cmd	*init_cmd()
 {
-	(void)argc;
-	t_cmd 	*cmd;
-	
-	cmd = init_cmd();
-	cmd->args = argv;
-	ft_echo(cmd);
-	ft_pwc(cmd);
+	return (t_cmd *) malloc(sizeof(t_cmd));
 }
