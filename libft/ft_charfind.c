@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array_len.c                                        :+:      :+:    :+:   */
+/*   ft_strfind.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 11:16:19 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/08 11:39:18 by ritavasques      ###   ########.fr       */
+/*   Created: 2024/03/07 17:13:24 by ritavasques       #+#    #+#             */
+/*   Updated: 2024/03/07 17:20:00 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	array_len(char **array)
+int	ft_charfind(char *str, char c)
 {
 	int	i;
 
-	i = 0;
-	while (array[i])
-		i++;
-	return (i);
+    i = 0;
+	if (!str || !c)
+		return (0);
+	while (str[i] != c) 
+			i++;
+    return (i);
 }

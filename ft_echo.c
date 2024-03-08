@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:15:46 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/06 16:03:50 by rivasque         ###   ########.fr       */
+/*   Updated: 2024/03/08 11:37:18 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_echo(t_cmd *cmd)
 	int	len;
 
 	i = 0;
-	len = array_size(cmd->args) - 1;
+	len = array_len(cmd->args) - 1;
 	if (!cmd->args[0])
 		printf("\n");
 	if (ft_strcmp(cmd->args[i], "-n") == 0)

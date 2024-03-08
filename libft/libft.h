@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:40:12 by rivasque          #+#    #+#             */
-/*   Updated: 2024/02/29 10:24:59 by rivasque         ###   ########.fr       */
+/*   Updated: 2024/03/08 11:39:35 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int		ft_putchar(char c);
 int		ft_putstr(char *str);
 int		ft_putnbr(long n);
 int		ft_printf(const char *str, ...);
-int		a_l(char **array);
+int		array_len(char **array);
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -83,5 +83,6 @@ char	*ft_strcpy(char *dest, char *src);
 int		ft_strcmp(char *s1, char *s2);
 int		ft_strchr_int(char *str, int c);
 char	*ft_strjoin_buff(char *add_read, char *str_buff);
+int		ft_charfind(char *str, char c);
 
 #endif

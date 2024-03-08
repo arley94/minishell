@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:09:56 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/06 16:02:44 by rivasque         ###   ########.fr       */
+/*   Updated: 2024/03/08 11:36:16 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include	<fcntl.h>
 # include	<unistd.h>
 
+// Data for each command
 typedef struct	s_cmd
 {
 	//command name
@@ -33,8 +34,14 @@ typedef struct	s_cmd
 	
 }					t_cmd;
 
-// General functions
-int	array_size(char **argv);
+typedef struct s_data
+{
+	//Environment variables
+	char	**envp;
+	t_cmd	*cmd;
+	
+	
+}			t_data;
 
 // Init
 t_cmd	*init_cmd();
@@ -42,8 +49,17 @@ t_cmd	*init_cmd();
 // Command functions
 int	is_builtin(t_cmd *cmd);
 
+//Builtin aux
+char    *new_env_name(char *str);
+char	*new_env_value(char *str);
+char    *home_path(t_data *data);
+
 //Builtin functions
 void	ft_echo(t_cmd *cmd);
 void	ft_pwc(t_cmd *cmd);
+void	ft_export(t_cmd *cmd, t_data *data);
+void	ft_cd(t_data *data, t_cmd *cmd);
+
+
 
 #endif

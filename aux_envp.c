@@ -1,23 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array_len.c                                        :+:      :+:    :+:   */
+/*   aux_envp.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 11:16:19 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/08 11:39:18 by ritavasques      ###   ########.fr       */
+/*   Created: 2024/03/08 10:53:28 by ritavasques       #+#    #+#             */
+/*   Updated: 2024/03/08 13:13:42 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "minishell.h"
 
-int	array_len(char **array)
-{
-	int	i;
-
-	i = 0;
-	while (array[i])
-		i++;
-	return (i);
-}

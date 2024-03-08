@@ -9,7 +9,11 @@ SRC=	main.c \
 		aux.c \
 		ft_echo.c \
 		ft_pwc.c \
-		aux_init.c
+		ft_export \
+		ft_cd.c \
+		aux_init.c \
+		aux_export.c \
+		aux_envp.c
 
 OBJ=$(SRC:.c=.o)
 

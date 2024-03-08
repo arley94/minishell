@@ -52,7 +52,8 @@ FUNCTIONS=	ft_isalpha.c \
 			ft_strcpy.c \
 			ft_strcmp.c \
 			ft_strchr_int.c \
-			ft_strjoin_gnl.c
+			ft_strjoin_gnl.c \
+			ft_charfind.c
 			
 OBJ= $(FUNCTIONS:%.c=%.o)
 
