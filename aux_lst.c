@@ -6,7 +6,7 @@
 /*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 11:28:29 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/11 12:32:15 by ritavasques      ###   ########.fr       */
+/*   Updated: 2024/03/11 19:11:09 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,25 @@ t_llist	*llist_cpy(t_llist *llst)
 		llst = llst->next;
 	}
 	return (new);
+}
+
+void	llist_remove(t_llist **lst)
+{
+	t_llist	*temp;
+
+	if (!lst)
+		return (NULL);
+	temp = *lst;
+	if (temp->next)
+		temp->next->prev = temp->prev;
+	if (temp->prev)
+		temp->prev->next = temp->next;
+	if (temp->prev)
+		*lst = temp->prev;
+	else
+		*lst = temp->next;
+	free(temp->name);
+	if (temp->value)
+		free(temp->value);
+	free(temp);
 }
