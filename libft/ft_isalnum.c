@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:43:45 by rivasque          #+#    #+#             */
-/*   Updated: 2023/09/13 12:56:56 by rivasque         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:13:59 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
