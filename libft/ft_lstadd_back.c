@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 15:25:51 by rivasque          #+#    #+#             */
-/*   Updated: 2023/09/19 16:17:53 by rivasque         ###   ########.fr       */
+/*   Created: 2024/03/11 13:31:03 by ritavasques       #+#    #+#             */
+/*   Updated: 2024/03/11 13:48:45 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void    ft_lstadd_back(t_list **list, t_list *new)
 {
-	t_list	*temp;
-
-	if (!new || !lst)
+    t_list  *aux;
+    
+	if (!list || !new)
 		return ;
-	if (!(*lst))
-	{
-		*lst = new;
-		return ;
-	}
-	temp = *lst;
-	while (temp->next)
-		temp = temp->next;
-	temp->next = new;
+    aux = *list;
+    if (!aux)
+	    *list = new;
+    else
+    {
+        while ((aux)->next)
+            aux = aux->next;
+        aux->next = new;
+    }
 }

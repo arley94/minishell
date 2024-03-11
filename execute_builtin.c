@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   execute_builtin.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 14:22:32 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/11 14:14:16 by ritavasques      ###   ########.fr       */
+/*   Created: 2024/03/09 13:35:19 by ritavasques       #+#    #+#             */
+/*   Updated: 2024/03/11 13:00:53 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(int argc, char **argv, char **envp)
+void    exec_builtin(t_cmd *cmd, char **envp)
 {
-	(void)argc;
-	t_cmd	*cmd;
-	t_data	*data;
-	
-	cmd = init_cmd();
-	data = init_data();
-	cmd->name = argv[1];
-	cmd->args = get_args(argv);
-	data->envp = get_envp(envp);
-	printf("%s\n", cmd->name);
-	exec_builtin(cmd, envp);
-	return (0);
+    if (ft_strcmp(cmd->name, "echo") == 0)
+        ft_echo(cmd);
+    else if (ft_strcmp(cmd->name, "pwd") == 0)
+        ft_pwd(cmd);
+    else if (ft_strcmp(cmd->name, "cd") == 0)
+        ft_cd(cmd);
+    else if (ft_strcmp(cmd->name, "env") == 0)
+        ft_env(envp);    
+    //else if (ft_strcmp(cmd->name, "export") == 0)
+    //    ft_export(cmd, data);
 }
-
-
-

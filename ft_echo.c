@@ -6,42 +6,66 @@
 /*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:15:46 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/08 11:37:18 by ritavasques      ###   ########.fr       */
+/*   Updated: 2024/03/11 12:33:21 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	ft_echo(t_cmd *cmd)
+int	ft_echo(t_cmd *cmd)
 {
-	int	i;
-	int	len;
-
-	i = 0;
-	len = array_len(cmd->args) - 1;
-	if (!cmd->args[0])
+	if (!cmd->args)
 		printf("\n");
-	if (ft_strcmp(cmd->args[i], "-n") == 0)
-	{
-		i = 1;
-		while (i < len)
-		{
-			printf("%s", cmd->args[i]);
-			printf(" ");
-			i++;
-		}
-		printf("%s", cmd->args[len]);
-	}	
 	else
 	{
-		i = 0;
-		while (i < len)
+		if (ft_strcmp((char *)cmd->args->content, "-n") == 0)
+			print_list(cmd->args->next, " ");
+		else
 		{
-			printf("%s", cmd->args[i]);
-			printf(" ");
+			print_list(cmd->args, " ");
+			printf("\n");
+		}	
+	}
+	return (0);
+}
+
+//ALTERNATIVE IN CASE STRCMP NOT POSSIBLE
+/*
+int	check_n(char *str)
+{
+	int	i;
+
+	i = 1;
+	if (str[0] == '-')
+	{
+		while (str[i])
+		{
+			if (str[i] != 'n')
+				return (0);
 			i++;
 		}
-		printf("%s", cmd->args[len]);
-		printf("\n");
+		return (1);
 	}
+	return (0);
 }
+
+int	ft_echo(t_cmd *cmd)
+{
+	int	flag;
+	
+	if (!cmd->args)
+		printf("\n");
+	else
+	{
+		flag = check_n(cmd->args->content);
+		if (flag == 1)
+			print_lst(cmd->args->next, " ");
+		else
+		{
+			print_lst(cmd->args, " ");
+			printf("\n");
+		}	
+	}
+	return (0);
+}
+*/

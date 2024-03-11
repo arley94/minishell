@@ -6,14 +6,16 @@ LIBFT=./libft/libft.a
 SRC=	main.c \
 		aux_cmds.c \
 		aux_path.c \
-		aux.c \
+		aux_lst.c \
 		ft_echo.c \
-		ft_pwc.c \
-		ft_export \
+		ft_pwd.c \
+		ft_export.c \
 		ft_cd.c \
+		ft_env.c \
+		ft_unset.c \
 		aux_init.c \
-		aux_export.c \
-		aux_envp.c
+		aux_envp.c \
+		execute_builtin.c
 
 OBJ=$(SRC:.c=.o)
 

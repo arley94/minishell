@@ -3,21 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   aux_cmds.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:58:05 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/06 11:41:23 by rivasque         ###   ########.fr       */
+/*   Updated: 2024/03/11 13:56:41 by ritavasques      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "minishell.h"
+#include "minishell.h"
 
-char	**cmds(char *argv)
+t_list	*get_args(char **argv)
 {
-	char	**array_cmds;
-
-	array_cmds = ft_split(argv, ' ');
-	return (array_cmds);
+	int		i;
+    t_list	*args;
+	
+	i = 2;
+	args = NULL;
+	while (argv[i])
+	{
+		ft_lstadd_back(&args, ft_lstnew(argv[i]));
+		i++;
+	}
+	return (args);
 }
 
 int	is_builtin(t_cmd *cmd)
@@ -29,21 +36,4 @@ int	is_builtin(t_cmd *cmd)
 			return (1);
 	return (0);
 }
-
-
-int	is_token(t_cmd **argv)
-{
-	int	i;
-	
-	i = 0;
-	while (argv[i])
-	{
-		if (argv[i] == '<' || argv[i] == '>'|| 
-		argv[i] == '<<' || argv[i] == '>>' || argv[i] == '|')
-			return (1);
-		else 
-			return (0);
-		i++;
-	}
-}*/
 

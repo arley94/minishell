@@ -41,9 +41,10 @@ FUNCTIONS=	ft_isalpha.c \
 			aux_printf.c \
 			array_len.c \
 			ft_lstnew.c \
-			ft_lstadd_back.c \
 			ft_lstadd_front.c \
+			ft_lstadd_back.c \
 			ft_lstsize.c \
+			print_lst.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_strict_atoi.c \
