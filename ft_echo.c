@@ -3,69 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   ft_echo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
+/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:15:46 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/11 12:33:21 by ritavasques      ###   ########.fr       */
+/*   Updated: 2024/03/12 12:24:33 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_echo(t_cmd *cmd)
-{
-	if (!cmd->args)
-		printf("\n");
-	else
-	{
-		if (ft_strcmp((char *)cmd->args->content, "-n") == 0)
-			print_list(cmd->args->next, " ");
-		else
-		{
-			print_list(cmd->args, " ");
-			printf("\n");
-		}	
-	}
-	return (0);
-}
-
-//ALTERNATIVE IN CASE STRCMP NOT POSSIBLE
-/*
 int	check_n(char *str)
 {
 	int	i;
 
-	i = 1;
-	if (str[0] == '-')
+	i = 0;
+	if (str[i] && str[i] == '-')
+		i++;
+	else
+		return (0);
+	while (str[i])
 	{
-		while (str[i])
-		{
-			if (str[i] != 'n')
-				return (0);
-			i++;
-		}
-		return (1);
+		if (str[i] != 'n')
+			return (0);
+		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	ft_echo(t_cmd *cmd)
 {
 	int	flag;
+	t_list *args = cmd->args;
 	
+	flag = 0;
 	if (!cmd->args)
 		printf("\n");
 	else
 	{
-		flag = check_n(cmd->args->content);
-		if (flag == 1)
-			print_lst(cmd->args->next, " ");
-		else
+		while (args && check_n(args->content))
 		{
-			print_lst(cmd->args, " ");
+			args = args->next;
+			flag = 1;
+		}
+		print_list(args, " ");
+		if (!flag)
 			printf("\n");
-		}	
-	}
+	}	
+
+	
 	return (0);
 }
-*/

@@ -12,7 +12,6 @@ SRC=	main.c \
 		ft_export.c \
 		ft_cd.c \
 		ft_env.c \
-		ft_unset.c \
 		ft_exit.c \
 		aux_init.c \
 		aux_envp.c \

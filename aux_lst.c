@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux_lst.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
+/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 11:28:29 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/11 19:11:09 by ritavasques      ###   ########.fr       */
+/*   Updated: 2024/03/12 10:11:35 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ t_llist	*llist_cpy(t_llist *llst)
 	return (new);
 }
 
-void	llist_remove(t_llist **lst)
+/*void	llist_remove(t_llist **lst)
 {
 	t_llist	*temp;
 
 	if (!lst)
-		return (NULL);
+		return ;
 	temp = *lst;
 	if (temp->next)
 		temp->next->prev = temp->prev;
@@ -82,4 +82,4 @@ void	llist_remove(t_llist **lst)
 	if (temp->value)
 		free(temp->value);
 	free(temp);
-}
+}*/

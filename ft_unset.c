@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_unset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
+/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:46:17 by ritavasques       #+#    #+#             */
-/*   Updated: 2024/03/11 19:31:14 by ritavasques      ###   ########.fr       */
+/*   Updated: 2024/03/12 10:12:30 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	ft_unset(t_cmd *cmd, t_data *data)
+/*int	ft_unset(t_cmd *cmd, t_data *data)
 {
 	t_llist	*aux_envp;
 	t_llist *temp;
@@ -37,4 +37,4 @@ int	ft_unset(t_cmd *cmd, t_data *data)
 		temp = aux_envp;
 	}
 	return (0);
-}
+}*/

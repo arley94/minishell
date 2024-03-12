@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
+/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:09:56 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/11 20:51:23 by ritavasques      ###   ########.fr       */
+/*   Updated: 2024/03/12 10:36:45 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int		ft_echo(t_cmd *cmd);
 int		ft_pwd(t_cmd *cmd);
 int		ft_export(t_cmd *cmd, t_data *data);
 int		ft_cd(t_cmd *cmd);
-int		ft_env(char **envp);
+int		ft_env(t_llist *envp);
 void	ft_exit(t_cmd *cmd, t_data *data);
 
 //General aux functions
@@ -81,7 +81,7 @@ t_llist	*llist_cpy(t_llist *llst);
 void	llist_remove(t_llist **lst);
 
 //execute
-void    exec_builtin(t_cmd *cmd, char **envp);
+void    exec_builtin(t_cmd *cmd, t_data *data);
 
 
 #endif
