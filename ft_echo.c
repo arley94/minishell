@@ -6,7 +6,7 @@
 /*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:15:46 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/12 12:24:33 by rivasque         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:00:30 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ int	check_n(char *str)
 int	ft_echo(t_cmd *cmd)
 {
 	int	flag;
-	t_list *args = cmd->args;
+	t_list *args;
 	
+	args = cmd->args;
 	flag = 0;
 	if (!cmd->args)
 		printf("\n");
@@ -48,8 +49,6 @@ int	ft_echo(t_cmd *cmd)
 		print_list(args, " ");
 		if (!flag)
 			printf("\n");
-	}	
-
-	
+	}
 	return (0);
 }

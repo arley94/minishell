@@ -15,6 +15,7 @@ SRC=	main.c \
 		ft_exit.c \
 		aux_init.c \
 		aux_envp.c \
+		aux_files.c \
 		execute_builtin.c
 
 OBJ=$(SRC:.c=.o)

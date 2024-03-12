@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cd.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ritavasques <ritavasques@student.42.fr>    +#+  +:+       +#+        */
+/*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 10:42:27 by ritavasques       #+#    #+#             */
-/*   Updated: 2024/03/11 14:11:15 by ritavasques      ###   ########.fr       */
+/*   Updated: 2024/03/12 14:56:06 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*path_home(t_cmd *cmd)
 	char	*path;
 	
 	path = getenv("HOME");
-	printf("Home: %s\n", path);
 	if (chdir(path) < 0)
 	{
 		printf("HOME not set");
@@ -33,7 +32,6 @@ char	*find_path_old(t_cmd *cmd)
 	char *path;
 	
 	path = getenv("OLDPWD");
-	printf("Old: %s\n", path);
 	if (chdir(path) < 0)
 	{
 		printf("OLDPWD not set");

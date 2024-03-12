@@ -6,7 +6,7 @@
 /*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:22:09 by ritavasques       #+#    #+#             */
-/*   Updated: 2024/03/12 11:36:35 by rivasque         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:15:43 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,9 @@ void	update_envp_value(t_llist *envp, char *argument)
 	else
 		value = ft_substr(argument, ft_charfind(argument, '=') + 1, ft_strlen(argument));
 	if (!check_dup_env(envp, name))
+	{
 		lst_add_back(&envp, lst_add_new(name, value));
+	}
 	else
 	{
 		replace_dup_env(envp, name, value);
@@ -135,10 +137,7 @@ int    ft_export(t_cmd *cmd, t_data *data)
 	while (lst)
 	{
 		if (!valid_name(name_env(cmd)))
-		{
-			printf("hola que tal %s\n", name_env(cmd));
 			return (0);
-		}
 		if (!ft_strchr(lst->content, '='))
 		{
 			if (!check_dup_env(aux_envp, lst->content))

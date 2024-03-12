@@ -6,7 +6,7 @@
 /*   By: rivasque <rivasque@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:09:56 by rivasque          #+#    #+#             */
-/*   Updated: 2024/03/12 10:36:45 by rivasque         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:02:40 by rivasque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@ typedef struct		s_llist
 // Data for each command
 typedef struct	s_cmd
 {
+	// Files
 	//command name
 	char			*name;
+	//Env path for cmd
 	char			*path;
 	//Comand arguments(not taking into account the command itself)
 	t_list			*args;
